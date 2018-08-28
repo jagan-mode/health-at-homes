@@ -1,0 +1,80 @@
+<div>
+ 
+<div class="row">
+    <div class="col-md-6">
+    <h2>Customers</h2>
+    </div>
+  </div>
+  <div class="row">
+     
+    <div class="col-md-12">
+     
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="check_box_width">
+
+              <input type="checkbox" id="test1" />
+              <label for="test1"></label>
+
+            </th>
+            <th>NAME</th>
+            <th>PHONE</th>
+            <th >EMAIL</th>         
+            <th>LOCATION</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td>
+
+              <input type="checkbox" id="test2{{i}}" />
+              <label for="test2{{i}}"></label>
+            </td>
+            <td [routerLink]="['/customer-details']">
+              <ul class="list-inline">
+                <li class="celebrity_img_list">
+                    <img src="https://cdn1.iconfinder.com/data/icons/mix-color-4/502/Untitled-1-512.png"   class="img-avatar" alt="">
+                    <!-- <img src="{{celebrity.profile_pic}}" *ngIf="celebrity.profile_pic" class="img-avatar" alt=""> -->
+                </li>
+                <li class="celebrity_name_list">Ramya</li>
+              </ul>
+
+            </td>
+            <td>9090909090</td>
+            <td>ramm@gmail.com </td>
+            <td>hyderabad</td>
+          </tr>
+          <tr>
+            <td>
+
+              <input type="checkbox" id="test2{{i}}" />
+              <label for="test2{{i}}"></label>
+            </td>
+            <td>
+              <ul class="list-inline">
+                <li class="celebrity_img_list">
+                    <img src="https://cdn1.iconfinder.com/data/icons/mix-color-4/502/Untitled-1-512.png"   class="img-avatar" alt="">
+                    <!-- <img src="{{celebrity.profile_pic}}" *ngIf="celebrity.profile_pic" class="img-avatar" alt=""> -->
+                </li>
+                <li class="celebrity_name_list">Ramya</li>
+              </ul>
+
+            </td>
+            <td>9090909090</td>
+            <td>ramm@gmail.com </td>
+            <td>hyderabad</td>
+          </tr>
+
+        </tbody>
+        
+      </table> 
+        
+    </div>
+  </div>
+
+
+
+
+</div>

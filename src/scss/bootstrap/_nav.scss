@@ -1,0 +1,169 @@
+// Base class
+//
+// Kickstart any navigation component with a set of style resets. Works with
+// `<nav>`s or `<ul>`s.
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.nav-link {
+  display: block;
+  padding: $nav-link-padding-y $nav-link-padding-x;
+
+  @include hover-focus {
+    text-decoration: none;
+  }
+
+  // Disabled state lightens text
+  &.disabled {
+    color: $nav-link-disabled-color;
+  }
+}
+
+//
+// Tabs
+//
+
+.nav-tabs {
+  border-bottom: $nav-tabs-border-width solid $nav-tabs-border-color;
+
+  .nav-item {
+    margin-bottom: -$nav-tabs-border-width;
+  }
+
+  .nav-link {
+    border: $nav-tabs-border-width solid transparent;
+    @include border-top-radius($nav-tabs-border-radius);
+
+    @include hover-focus {
+      border-color: $nav-tabs-link-hover-border-color $nav-tabs-link-hover-border-color $nav-tabs-border-color;
+    }
+
+    &.disabled {
+      color: $nav-link-disabled-color;
+      background-color: transparent;
+      border-color: transparent;
+    }
+  }
+
+  .nav-link.active,
+  .nav-item.show .nav-link {
+    color: $nav-tabs-link-active-color;
+    background-color: $nav-tabs-link-active-bg;
+    border-color: $nav-tabs-link-active-border-color $nav-tabs-link-active-border-color $nav-tabs-link-active-bg;
+  }
+
+  .dropdown-menu {
+    // Make dropdown border overlap tab border
+    margin-top: -$nav-tabs-border-width;
+    // Remove the top rounded corners here since there is a hard edge above the menu
+    @include border-top-radius(0);
+  }
+}
+
+
+//
+// Pills
+//
+
+.nav-pills {
+  .nav-link {
+    @include border-radius($nav-pills-border-radius);
+
+    &.active,
+    .show > & {
+      color: $nav-pills-link-active-color;
+      background-color: $nav-pills-link-active-bg;
+    }
+  }
+}
+
+
+//
+// Justified variants
+//
+
+.nav-fill {
+  .nav-item {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+}
+
+.nav-justified {
+  .nav-item {
+    flex-basis: 0;
+    flex-grow: 1;
+    text-align: center;
+  }
+}
+
+
+// Tabbable tabs
+//
+// Hide tabbable panes to start, show them when `.active`
+
+.tab-content {
+  > .tab-pane {
+    display: none;
+  }
+  > .active {
+    display: block;
+  }
+}
+
+
+
+#tabset-custom li.nav-item{
+  width:33% !important;
+}
+#tabset-custom .nav-tabs .nav-link.active{
+
+  color: #2d2d2d;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  padding: 20px 0px;
+  background:#fff;
+  // border-color: #eae7e7;
+  // border-bottom-color: #fff;
+  border-width:3px;
+  margin-bottom: -3px;
+ border-bottom: 1px solid #ddd;
+ padding-top: 0px;
+}
+
+#tabset-custom .nav-tabs .nav-link{
+
+  color: #979797;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  padding: 20px 0px;
+  // background:#fffeea;
+  // border-left: 1px solid #eae7e7;
+  border: none;
+  padding-top: 0px;
+}
+#tabset-custom .tab-content {
+  margin-top: 0px;
+  background: #fff;
+  // border-left: 3px solid #eae7e7 !important;
+  border: none;
+}
+#tabset-custom a.nav-link.active span {
+  border-bottom: 3px solid blue;
+  padding-bottom: 20px;
+}
+#tabset-custom  .nav-tabs .nav-item {
+  margin-bottom: 0px;
+}
+#tabset-custom  .nav-tabs {
+  border-bottom: 2px solid #ddd;
+  padding-top: 0px;
+}
